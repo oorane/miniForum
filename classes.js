@@ -1,3 +1,4 @@
+
 class Message {
 
     constructor(id, content, date, topic_id, author_id) {
@@ -17,5 +18,17 @@ class Message {
         var minute  = newDate.getMinutes();
         return `Par ${this.author_id.username}, le ${day}/${month}/${year} à ${hour}:${minute}.`;
     }
-    
+}
+
+class User {
+
+
+
+	constructor(id, username, password, admin){
+		this.id= id;
+		this.username= username;
+		this.password= password;
+		this.admin= admin;
+	}
+
 }
