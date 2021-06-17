@@ -9,13 +9,12 @@ class Message {
     }
 
     titreMessage() {
-        var date = new Date(timestamp * 1000);
-        var year    = date.getFullYear();
-        var month   = date.getMonth();
-        var day     = date.getDay();
-        var hour    = date.getHours();
-        var minute  = date.getMinutes();
-        var seconds = date.getSeconds();
+        var newDate = new Date(date * 1000);
+        var year    = newDate.getFullYear();
+        var month   = newDate.getMonth();
+        var day     = newDate.getDay();
+        var hour    = newDate.getHours();
+        var minute  = newDate.getMinutes();
         return `Par ${this.author_id.username}, le ${day}/${month}/${year} à ${hour}:${minute}.`;
     }
     
