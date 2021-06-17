@@ -1,6 +1,6 @@
 
 
-class Message {
+export class Message {
 
     constructor(id, content, date, topic_id, author_id) {
         this.id = id;
@@ -11,7 +11,7 @@ class Message {
     }
 
     titreMessage() {
-        var newDate = new Date(date * 1000);
+        var newDate = new Date(this.date * 1000);
         var year    = newDate.getFullYear();
         var month   = newDate.getMonth();
         var day     = newDate.getDay();
@@ -50,12 +50,12 @@ export class Sujet {
     infoSujet() {
 
         let newDate = new Date(this.date * 1000);
-        let year = date.getFullYear();
-        let month = date.getMonth();
-        let day = date.getDay();
-        let hour = date.getHours();
-        let minute = date.getMinutes();
-        let seconds = date.getSeconds();
+        let year = newDate.getFullYear();
+        let month = newDate.getMonth();
+        let day = newDate.getDay();
+        let hour = newDate.getHours();
+        let minute = newDate.getMinutes();
+        let seconds = newDate.getSeconds();
         return  `Posté le ${day}/${month}/${year} à ${hour}:${minute} par ${this.author_id.username}`;
 
     }
