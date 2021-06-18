@@ -1,4 +1,3 @@
-
 class Message {
 
     constructor(id, content, date, topic_id, author_id) {
@@ -22,8 +21,6 @@ class Message {
 
 class User {
 
-
-
 	constructor(id, username, password, admin){
 		this.id= id;
 		this.username= username;
@@ -31,7 +28,6 @@ class User {
 		this.admin= admin;
 	}
 }
-
 
 class Sujet {
 
@@ -58,5 +54,4 @@ class Sujet {
         return  `Posté le ${newDate.day}/${newDate.month}/${newDate.year} à ${newDate.hour}:${newDate.minute} par ${this.author_id.username}`;
 
     }
-
 }
