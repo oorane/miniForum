@@ -21,7 +21,7 @@ export class Message {
     }
 }
 
-class User {
+export class User {
 
 
 
