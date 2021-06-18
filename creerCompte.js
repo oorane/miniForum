@@ -1,7 +1,9 @@
 
 import { User } from "./classes.js";
 
-let check= false;
+let username_check= false;
+let password_check= false;
+let confirm_check= false;
 let save_check= false;
 let users_list= [];
 
@@ -86,22 +88,21 @@ displayForm();
 
 recupUsers();
 
-console.log(users_list);
-
 username_input.addEventListener("input", event => {
+	console.log(users_list);
 	let username_label= document.getElementById("username_label");
 	let search_value= username_input.value;
 	recupUsers();
 	username_label.textContent= "";
-	check= true;
+	username_check= true;
 	users_list.forEach(user => {
 		if(user.username === search_value) {
 			username_label.textContent= "Erreur : ce nom existe déjà.";
-			check= false;
+			username_check= false;
 		}
 		else if(search_value.length <3 || search_value.length >50 ) {
 			username_label.textContent= "La taille doit être comprise entre 3 et 50 caractères.";
-			check= false;
+			username_check= false;
 		}
 	});
 
@@ -110,30 +111,26 @@ username_input.addEventListener("input", event => {
 password_input.addEventListener("input", event => {
 	let password_label= document.getElementById("password_label");
 	let search_value= password_input.value;
-		if(search_value.search(/[0-9]/) === -1 || search_value.search(/[A-Z]/) === -1 || search_value.search(/[^A-Za-z0-9]/) === -1) {
-			password_label.textContent= "Le mot de passe doit contenir au minimum : un chiffre, une majuscule et un caractère spécial.";
-			check= false;
-		}
-		else if(search_value.length <8 || search_value.length >50 ) {
-			password_label.textContent= "Le mot de passe doit contenir au moins 8 caractères.";
-			check= false;
-		}
-		else {
-			password_label.textContent= "";
-			check= true;
-		}
+	password_label.textContent= "";
+	password_check= true;
+	if(search_value.search(/[0-9]/) === -1 || search_value.search(/[A-Z]/) === -1 || search_value.search(/[^A-Za-z0-9]/) === -1) {
+		password_label.textContent= "Le mot de passe doit contenir au minimum : un chiffre, une majuscule et un caractère spécial.";
+		password_check= false;
+	}
+	else if(search_value.length <8 || search_value.length >50 ) {
+		password_label.textContent= "Le mot de passe doit contenir au moins 8 caractères.";
+		password_check= false;
+	}
 });
 
 confirm_input.addEventListener("input", event => {
 	let confirm_label= document.getElementById("confirm_label");
 	let search_value= confirm_input.value;
+	confirm_label.textContent= "";
+	confirm_check= true;
 		if(password_input.value !== search_value) {
 			confirm_label.textContent= "L'entrée ne correspond pas au mot de passe.";
-			check= false;
-		}
-		else {
-			confirm_label.textContent= "";
-			check= true;
+			confirm_check= false;
 		}
 });
 
@@ -148,7 +145,7 @@ save_localstorage.addEventListener("change", event => {
 });
 
 create_button.addEventListener("click", event => {
-	if(check === true) {
+	if(username_check === true && password_check === true && confirm_check === true) {
 		createUser();
 		if(save_check === true) {
 			const new_user= new User(username_input.value,password_input.value);
@@ -166,7 +163,6 @@ function recupUsers() {
 			data.forEach(user => {
 				users_list.push(new User(user.username,user.password));
 			});
-			console.log(users_list);
 		})
 		.catch((error) => {
 			console.error("Error:", error);
