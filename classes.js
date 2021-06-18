@@ -1,4 +1,4 @@
-class Message {
+export class Message {
 
     constructor(id, content, date, topic_id, author_id) {
         this.id = id;
@@ -19,7 +19,7 @@ class Message {
     }
 }
 
-class User {
+export class User {
 
 	constructor(id, username, password, admin){
 		this.id= id;
@@ -29,7 +29,7 @@ class User {
 	}
 }
 
-class Sujet {
+export class Sujet {
 
     constructor(id, title, date, author_id) {
         this.id = id;
