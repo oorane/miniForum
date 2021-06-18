@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 
 export class Message {
+=======
+class Message {
+>>>>>>> 2094244ca6c7336642286805e0ec105d7a59b3ac
 
     constructor(id, content, date, topic_id, author_id) {
         this.id = id;
@@ -24,8 +28,6 @@ export class Message {
 
 class User {
 
-
-
 	constructor(id, username, password, admin){
 		this.id= id;
 		this.username= username;
@@ -34,8 +36,12 @@ class User {
 	}
 }
 
+<<<<<<< HEAD
 
 export class Sujet {
+=======
+class Sujet {
+>>>>>>> 2094244ca6c7336642286805e0ec105d7a59b3ac
 
     constructor(id, title, date, author_id) {
         this.id = id;
@@ -60,6 +66,9 @@ export class Sujet {
         return  `Posté le ${day}/${month}/${year} à ${hour}:${minute} par ${this.author_id.username}`;
 
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2094244ca6c7336642286805e0ec105d7a59b3ac
 }
