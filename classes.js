@@ -1,5 +1,4 @@
 
-
 export class Message {
 
     constructor(id, content, date, topic_id, author_id) {
@@ -22,7 +21,6 @@ export class Message {
 }
 
 export class User {
-
 
 
 	constructor(id, username, password, admin){
@@ -59,5 +57,4 @@ export class Sujet {
         return  `Posté le ${day}/${month}/${year} à ${hour}:${minute} par ${this.author_id.username}`;
 
     }
-
 }

@@ -3,15 +3,24 @@
     --bleu: dodgerblue;
     --bleu-foncé: mediumblue;
     --transparence: #00000000;
+    --marge: 1em;
 
-    margin: 30px 100px;
+    margin: 30px 50px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.invisible {
+    display: none;
 }
 
 header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 80px;
+}
+
+textarea {
+    resize: none;
 }
 
 button.headerB {
@@ -24,13 +33,78 @@ button.headerB {
 }
 
 button.hUnselected {
-    border-bottom: 3mm solid var(--transparence);
+    border-bottom: 5px solid var(--transparence);
 }
 
 button.hSelected {
-    border-bottom: 3mm solid var(--bleu);
+    border-bottom: 5px solid var(--bleu);
 }
 
 button.hHover {
-    border-bottom: 3mm solid var(--bleu-foncé);
+    border-bottom: 5px solid var(--bleu-foncé);
+}
+
+div.popup {
+    background-color: darkslateblue;
+    color: #ffffff;
+    padding: 0px 1em;
+    border-radius: 0.3em;
+    position: absolute;
+}
+
+.nvsujet{
+    margin: 40px 0px;
+}
+
+.inputtxt {
+    box-sizing: border-box;
+    border: 3px solid var(--bleu);
+    width: 100%;
+    padding: 1em 0.5em;
+    margin-bottom: var(--marge);
+}
+
+.sujet {
+    display: grid;
+	grid-template-columns: 1fr 100px 100px;
+    grid-column-gap: var(--marge);
+    margin-bottom: var(--marge);
+}
+
+input.ajoutsujet {
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: var(--bleu-claire);
+    border: 3px solid var(--bleu);
+    width: 100%;
+}
+
+h3.accueil {
+    display: inline;
+    color: var(--bleu-claire);
+    margin: auto 0.2em;
+}
+
+button.bouton_modif {
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: var(--bleu-claire);
+    border: 3px solid var(--bleu);
+    width: 100%;
+}
+
+button.bouton_enregistre {
+    padding: 0.5em;
+    color: #ffffff;
+    background-color:mediumseagreen;
+    border: 3px solid forestgreen;
+    width: 100%;
+}
+
+button.bouton_supp {
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: indianred;
+    border: 3px solid red;
+    width: 100%;
 }
